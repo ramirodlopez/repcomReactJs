@@ -1,6 +1,6 @@
 import './index.css'
 import logoImg from '../../../src/logitoasd.png'
-import carritoImg from '../../../src/carrito.png'
+import CartWidget from '../CartWidget/CartWidget'
 
 const Header = () => {
     return (
@@ -19,11 +19,7 @@ const Header = () => {
                         <li><a href="#/">Contacto</a></li>
                     </ul>
                 </nav>
-                <img
-                    className="carrito"
-                    src={carritoImg}
-                    alt=""
-                />
+                <CartWidget />
             </div>
         </header>
     )
