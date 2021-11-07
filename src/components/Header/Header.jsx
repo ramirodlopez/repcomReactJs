@@ -1,13 +1,14 @@
 import './index.css'
-import logo from '../../../src/logitoasd.png'
+import logoImg from '../../../src/logitoasd.png'
+import carritoImg from '../../../src/carrito.png'
 
 const Header = () => {
     return (
         <header>
-            <div class="container">
+            <div className="container">
                 <img
-                    class="logito"
-                    src={logo}
+                    className="logito"
+                    src={logoImg}
                     alt=""
                 />
                 <nav>
@@ -18,6 +19,11 @@ const Header = () => {
                         <li><a href="#/">Contacto</a></li>
                     </ul>
                 </nav>
+                <img
+                    className="carrito"
+                    src={carritoImg}
+                    alt=""
+                />
             </div>
         </header>
     )
