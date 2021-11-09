@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+.fondito {
+    display:grid;
+    grid-template-columns: 1fr 900px 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    margin-top: 100px;
+}
+
+.iconoGps {
+    width: 200px;
+}
+
+.gpsDos {
+    width: 300px;
+}
+
+h1{
+    color: rgb(206, 206, 206);
+    font-size: 50px;
+    border-color: gray;
+}
+
+h3{
+    color: gray;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.btn {
+    height: 50px;
+    color: black;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform:scale(1.25);
+    color: black;
+}
+
+
