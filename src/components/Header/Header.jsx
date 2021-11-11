@@ -1,5 +1,5 @@
 import './index.css'
-import logoImg from '../../../src/logitoasd.png'
+import logoImg from '../../../src/assets/logitoasd.png'
 import CartWidget from '../CartWidget/CartWidget'
 
 const Header = () => {
