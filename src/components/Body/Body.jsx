@@ -1,6 +1,7 @@
 import './index.css'
 import iconoImg from '../../../src/assets/iconoGps.png'
 import ItemListContainer from '../ItemListContainer/ItemListContainer'
+import ItemCount from '../ItemCount/ItemCount'
 
 const Body = () => {
     return (
@@ -18,8 +19,9 @@ const Body = () => {
                 <h3>Encontra equipos y cartografias de calidad</h3>
             </div>
             <p></p>
-            <p></p>
-            <button type="button" className="btn btn-secondary">Ingresar a repcom</button>
+            <ItemCount />
+            <button id="btnB" type="button" className="btn btn-secondary">Ingresar a repcom</button>
+
 
 
         </div>
