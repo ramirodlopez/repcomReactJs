@@ -5,13 +5,13 @@ const ItemCount = (props) => {
 
     const [number, setNumber] = useState(props.initial)
 
-    const incrementar = () => {
+    const onIncrease = () => {
         if (number < props.stock) {
             setNumber(number + 1)
         }
     }
 
-    const decrementar = () => {
+    const onDecrease = () => {
         if (number > 0) {
             setNumber(number - 1)
         }
@@ -24,8 +24,8 @@ const ItemCount = (props) => {
             <p>Initial={props.initial}</p>
             <h3 className="contenedor">{number}</h3>
             <div className="contenedor">
-                <button type="button" class="btn btn-dark" onClick={incrementar}>+</button>
-                <button type="button" class="btn btn-dark" onClick={decrementar}>-</button>
+                <button type="button" class="btn btn-dark" onClick={onIncrease}>+</button>
+                <button type="button" class="btn btn-dark" onClick={onDecrease}>-</button>
             </div>
         </div >
 
