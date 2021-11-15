@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import './index.css'
 
-const ItemCount = () => {
+const ItemCount = (props) => {
 
-    const [number, setNumber] = useState(0)
+    const [number, setNumber] = useState(props.initial)
 
     const incrementar = () => {
-        setNumber(number + 1)
+        if (number < props.stock) {
+            setNumber(number + 1)
+        }
     }
 
     const decrementar = () => {
@@ -17,7 +19,9 @@ const ItemCount = () => {
     return (
 
         <div>
-            <h3>Contador</h3>
+            <p>Contador</p>
+            <p>Stock={props.stock}</p>
+            <p>Initial={props.initial}</p>
             <h3 className="contenedor">{number}</h3>
             <div className="contenedor">
                 <button type="button" class="btn btn-dark" onClick={incrementar}>+</button>
