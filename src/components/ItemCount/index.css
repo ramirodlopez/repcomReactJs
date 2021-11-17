@@ -1,13 +1,19 @@
 .contenedor{
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
     display:flex;
     justify-content: center;
 }
 
-button{
-    flex:auto;
+#buttonCard{
+    margin: 5px;
+    width: 50px;
 }
 
 p{
-    color:white;
+    color:rgb(0, 0, 0);
+}
+
+h3{
+    color:rgb(0, 0, 0);
+    margin-top: 10px;
 }
