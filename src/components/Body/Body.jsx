@@ -3,6 +3,7 @@ import iconoImg from '../../../src/assets/iconoGps.png'
 import ArticleHeading from '../ArticleHeading/ArticleHeading'
 import ItemCount from '../ItemCount/ItemCount'
 import ItemListContainer from '../ItemListContainer/ItemListContainer'
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 
 
 const Body = () => {
@@ -27,6 +28,10 @@ const Body = () => {
             <p></p>
             <p></p>
             <ItemListContainer />
+            <p></p>
+            <p></p>
+            <p></p>
+            <ItemDetailContainer />
 
 
 

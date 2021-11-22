@@ -6,6 +6,7 @@ export const products = [
         id: 1,
         img: 'img/gps64sx.jpg',
         stock: 5,
+        detail: 'GPS de mano con sensores de navegación con múltiples sensores',
     },
     {
         name: 'Gps65s',
@@ -14,6 +15,7 @@ export const products = [
         id: 2,
         img: 'img/gps65s.jpg',
         stock: 7,
+        detail: 'Excelente para navegar con embarcaciones pequeñas',
     },
     {
         name: 'Gps65',
@@ -22,5 +24,6 @@ export const products = [
         id: 3,
         img: 'img/gps65.jpg',
         stock: 8,
+        detail: 'Sondas SideVü, ClearVü y CHIRP tradicionales con mapa base mundial',
     },
 ];
