@@ -22,9 +22,8 @@ const ItemCount = (props) => {
 
         <div>
             <h3 className="contenedor">{number}</h3>
-
-            <button type="button" id="buttonCard" class="btn btn-dark" onClick={onIncrease}>+</button>
             <button type="button" id="buttonCard" class="btn btn-dark" onClick={onDecrease}>-</button>
+            <button type="button" id="buttonCard" class="btn btn-dark" onClick={onIncrease}>+</button>
             <h5>Stock: {props.stock}</h5>
         </div >
 

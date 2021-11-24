@@ -1,3 +1,10 @@
+.fondito {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    margin-top: 180px;
+}
+
 .cardG {
     display: grid;
     padding: 20px;
@@ -11,13 +18,15 @@
     overflow: hidden;
     background-color: white;
   }
-  
+
   .cardG__hover:hover {
     transform:scale(1.1);
   }
 
   .tittle{
       color: rgb(46, 46, 46);
+      font-weight: 600;
+      font-size: 40px;
   }
 
   .letritas{

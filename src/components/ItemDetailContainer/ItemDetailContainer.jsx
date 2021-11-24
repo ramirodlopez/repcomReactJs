@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import ItemDetail from '../ItemDetail/ItemDetail';
+import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { products } from '../Items/Items';
+import { useParams } from 'react-router-dom';
+import './index.css'
 
-
-const ItemDetailContainer = ({ }) => {
-    const [items, setItems] = useState([]);
+export const ItemDetailContainer = () => {
+    const [product, setProduct] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+    const { itemId } = useParams();
 
     useEffect(() => {
-        const getItems = new Promise((resolve) => {
+        setIsLoading(true);
+        const getProduct = new Promise((res) => {
             setTimeout(() => {
-                resolve(products);
-            }, 2000);
+                res(products);
+            }, 1000);
         });
-        getItems
-            .then((res) => {
-                setItems(res);
-                console.log(res);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, []);
 
-    return (
-        <>
-            <ItemDetail items={items} />
-        </>
-    );
+        getProduct
+            .then((result) => {
+                itemId && setProduct(result.find((item) => item.id === itemId));
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
+    }, [itemId]);
+
+    return isLoading ? <h1>CARGANDO...</h1> : <ItemDetail {...product} />;
 };
 
-export default ItemDetailContainer;
+

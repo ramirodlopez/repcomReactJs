@@ -1,14 +1,14 @@
 import './index.css'
 import iconoImg from '../../../src/assets/iconoGps.png'
 import ArticleHeading from '../ArticleHeading/ArticleHeading'
-import ItemCount from '../ItemCount/ItemCount'
-import ItemListContainer from '../ItemListContainer/ItemListContainer'
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
+import { Link } from 'react-router-dom';
+
 
 
 const Body = () => {
+
     return (
-        <div className="fondito">
+        <div className="fonditoBody">
             <p></p>
             <img
                 className="iconoGps"
@@ -23,19 +23,9 @@ const Body = () => {
             </div>
             <p></p>
             <p></p>
-            <button id="btnB" type="button" className="btn btn-secondary">Ingresar a repcom</button>
-            <p></p>
-            <p></p>
-            <p></p>
-            <ItemListContainer />
-            <p></p>
-            <p></p>
-            <p></p>
-            <ItemDetailContainer />
-
-
-
-
+            <Link to="/category/CARTAS">
+                <button id="btnB" type="button" className="btn btn-secondary">Ingresar a repcom</button>
+            </Link>
         </div>
 
     )

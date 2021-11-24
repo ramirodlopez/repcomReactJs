@@ -3,13 +3,12 @@
     padding: 0;
   }
 
-.fondito {
+.fonditoBody {
     display:grid;
     grid-template-columns: 1fr 900px 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
     margin-top: 100px;
-    margin-bottom: 500px;
 }
 
 .iconoGps {

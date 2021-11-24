@@ -1,18 +1,18 @@
 import React from 'react';
-import ItemD from '../ItemD/ItemD';
+import ItemCount from '../ItemCount/ItemCount';
 import './index.css'
 
-
-const ItemDetail = ({ items }) => {
+export const ItemDetail = ({ id, name, category, img, price, detail, stock }) => {
     return (
-        <>
-            {items.map((item) => (
-                <ItemD key={item.id} item={item} />
-            ))}
-        </>
+        <div>
+            <div className="cardGOpen">
+                <h1 className="tittleOpen">{name}</h1>
+                <img src={img} alt="producto" />
+                <h4 className="subTittleOpen">{detail}</h4>
+                <h2 className="tittleOpen">${price}</h2>
+                <ItemCount stock={stock} />
+            </div>
+        </div>
     );
 };
-
-export default ItemDetail;
-
 

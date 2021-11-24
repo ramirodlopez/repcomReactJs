@@ -1,16 +1,15 @@
 import React from 'react';
-import Item from '../Item/Item';
-import './index.css'
+import { Item } from '../Item/Item';
 
-const ItemList = ({ items }) => {
+export const ItemList = ({ items }) => {
     return (
         <>
-            {items.map((item) => (
-                <Item key={item.id} item={item} />
-            ))}
+            <section className="fondito">
+                {items.map((item) => (
+                    <Item {...item} key={item.id} />
+                ))}
+            </section>
         </>
     );
 };
-
-export default ItemList;
 

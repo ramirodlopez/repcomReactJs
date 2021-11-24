@@ -1,4 +1,11 @@
-.cardG {
+.fonditoOpen {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    margin-top: 100px;
+}
+
+.cardGOpen {
     display: grid;
     padding: 20px;
     grid-template-columns: 1fr;
@@ -9,17 +16,14 @@
     border-radius: 10px;
     box-shadow: 0px 2px 7px 5px gray;
     overflow: hidden;
-    background-color: white;
-  }
-  
-  .cardG__hover:hover {
-    transform:scale(1.1);
+    background-color: rgb(255, 254, 254);
+    margin: 100px 500px 0px 500px;
   }
 
-  .tittle{
+  .tittleOpen{
       color: rgb(46, 46, 46);
   }
 
-  .letritas{
-      color: black;
+  .subTittleOpen{
+      color: rgb(0, 0, 0);
   }
