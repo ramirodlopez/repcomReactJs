@@ -1,7 +1,15 @@
-.fondito {
+/*.fondito {
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    margin-top: 180px;
+}
+*/
+.fondito {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     margin-top: 180px;
 }
 

@@ -6,15 +6,9 @@ import CartWidget from '../CartWidget/CartWidget'
 
 export const NavBar = () => {
 
-    const categories = [
-        { id: 'asfadd', address: '/', text: 'HOME' },
-        { id: '123asf', address: '/category/CARTAS', text: 'CARTAS' },
-        { id: 'sgs3q3', address: '/category/GPS', text: 'GPS' },
-    ];
-
     return (
         <header>
-            <div className="containerGlobal">
+            <nav className="containerGlobal">
                 <Link to="/">
                     <img
                         className="logito"
@@ -22,19 +16,14 @@ export const NavBar = () => {
                         alt=""
                     />
                 </Link>
-                <section className="container">
-                    {categories.map((cat) => {
-                        return (
-                            <div >
-                                <div key={cat.id}>
-                                    <NavLink to={cat.address} className={({ isActive }) => (isActive ? 'activeClass' : '')}>{cat.text}</NavLink>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </section>
+                <div className="container">
+                    <Link to="/">HOME</Link>
+                    <Link to="/category/PRODUCTS">PRODUCTS</Link>
+                    <Link to="/category/CARTAS">CARTAS</Link>
+                    <Link to="/category/GPS">GPS</Link>
+                </div>
                 <CartWidget />
-            </div>
+            </nav>
         </header>
     );
 };

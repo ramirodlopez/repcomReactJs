@@ -23,7 +23,7 @@ const Body = () => {
             </div>
             <p></p>
             <p></p>
-            <Link to="/category/CARTAS">
+            <Link to="/category/PRODUCTS">
                 <button id="btnB" type="button" className="btn btn-secondary">Ingresar a repcom</button>
             </Link>
         </div>

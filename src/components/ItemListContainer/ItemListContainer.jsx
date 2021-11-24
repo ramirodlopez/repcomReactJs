@@ -30,7 +30,13 @@ export const ItemListContainer = ({ greeting }) => {
     }, [catId]);
 
     return loader ? (
-        <h1>CARGANDO...</h1>
+        <div className="loading">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-grow text-secondary" role="status">
+                </div>
+            </div>
+            <h1 className="textLoading">Loading...</h1>
+        </div >
     ) : (
         <>
             <h3 style={{ textAlign: 'center' }}>{greeting}</h3>

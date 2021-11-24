@@ -26,7 +26,13 @@ export const ItemDetailContainer = () => {
             });
     }, [itemId]);
 
-    return isLoading ? <h1>CARGANDO...</h1> : <ItemDetail {...product} />;
+    return isLoading ? <div className="loading">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-grow text-secondary" role="status">
+            </div>
+        </div>
+        <h1 className="textLoading">Loading...</h1>
+    </div > : <ItemDetail {...product} />;
 };
 
 

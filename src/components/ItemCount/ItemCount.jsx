@@ -3,7 +3,7 @@ import './index.css'
 
 const ItemCount = (props) => {
 
-    const [number, setNumber] = useState(0)
+    const [number, setNumber] = useState(1)
 
     const onIncrease = () => {
         if (number < props.stock) {
@@ -12,7 +12,7 @@ const ItemCount = (props) => {
     }
 
     const onDecrease = () => {
-        if (number > 0) {
+        if (number > 1) {
             setNumber(number - 1)
         }
 
