@@ -7,6 +7,7 @@ import './index.css'
 export const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [irAlCarrito, setIrAlCarrito] = useState(false);
     const { itemId } = useParams();
 
     useEffect(() => {
@@ -26,13 +27,21 @@ export const ItemDetailContainer = () => {
             });
     }, [itemId]);
 
+    const onAdd = (cantidad) => {
+        console.log(cantidad, product);
+        console.log({ ...product, quantity: cantidad });
+        setIrAlCarrito(true);
+    };
+
+
     return isLoading ? <div className="loading">
         <div class="d-flex justify-content-center">
             <div class="spinner-grow text-secondary" role="status">
             </div>
         </div>
         <h1 className="textLoading">Loading...</h1>
-    </div > : <ItemDetail {...product} />;
+    </div > : <ItemDetail {...product} onAdd={onAdd}
+        irAlCarrito={irAlCarrito} />;
 };
 
 

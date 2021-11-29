@@ -1,21 +1,16 @@
 import { useState } from 'react'
 import './index.css'
 
-const ItemCount = (props) => {
+const ItemCount = ({ stock, onAdd }) => {
 
     const [number, setNumber] = useState(1)
 
     const onIncrease = () => {
-        if (number < props.stock) {
-            setNumber(number + 1)
-        }
+        number !== stock && setNumber(number + 1);
     }
 
     const onDecrease = () => {
-        if (number > 1) {
-            setNumber(number - 1)
-        }
-
+        number !== 0 && setNumber(number - 1);
 
     }
     return (
@@ -24,7 +19,10 @@ const ItemCount = (props) => {
             <h3 className="contenedor">{number}</h3>
             <button type="button" id="buttonCard" class="btn btn-dark" onClick={onDecrease}>-</button>
             <button type="button" id="buttonCard" class="btn btn-dark" onClick={onIncrease}>+</button>
-            <h5>Stock: {props.stock}</h5>
+            <button type="button" class="btn btn-dark" disabled={number === 0} onClick={() => onAdd(number)}>
+                Agregar al carrito
+            </button>
+            <h5>Stock: {stock}</h5>
         </div >
 
 

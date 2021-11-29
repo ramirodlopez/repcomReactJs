@@ -22,7 +22,7 @@ export const NavBar = () => {
                     <Link to="/category/CARTAS">CARTAS</Link>
                     <Link to="/category/GPS">GPS</Link>
                 </div>
-                <CartWidget />
+                <Link to="/CART"><CartWidget /></Link>
             </nav>
         </header>
     );
