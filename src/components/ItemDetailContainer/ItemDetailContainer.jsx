@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { products } from '../Items/Items';
 import { useParams } from 'react-router-dom';
 import './index.css'
+import { CartContext } from '../../context/CartContext/CartContext';
 
 export const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [irAlCarrito, setIrAlCarrito] = useState(false);
     const { itemId } = useParams();
+    const [cantProduct, setCantProduct] = useState(0);
+    const cartCon = useContext(CartContext)
+
 
     useEffect(() => {
         setIsLoading(true);
@@ -31,6 +35,14 @@ export const ItemDetailContainer = () => {
         console.log(cantidad, product);
         console.log({ ...product, quantity: cantidad });
         setIrAlCarrito(true);
+        setCantProduct(cantidad);
+    };
+
+    const onFinish = () => {
+        cartCon.addItem(product, cantProduct);
+        setProduct({});
+        setCantProduct(0);
+
     };
 
 
@@ -40,8 +52,8 @@ export const ItemDetailContainer = () => {
             </div>
         </div>
         <h1 className="textLoading">Loading...</h1>
-    </div > : <ItemDetail {...product} onAdd={onAdd}
-        irAlCarrito={irAlCarrito} />;
+    </div > : <ItemDetail item={product} onAdd={onAdd}
+        irAlCarrito={irAlCarrito} onFinish={onFinish} />;
 };
 
 

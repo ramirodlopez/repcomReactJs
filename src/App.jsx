@@ -7,11 +7,12 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { NavBar } from './components/NavBar/NavBar';
 import ItemCount from './components/ItemCount/ItemCount';
 import Cart from './components/Cart/Cart';
+import CartContextProvider, { ProductsProvider } from './context/CartContext/CartContext';
 
 
 const App = () => {
   return (
-    <Fragment>
+    <CartContextProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -25,7 +26,7 @@ const App = () => {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </Fragment>
+    </CartContextProvider>
   )
 }
 
