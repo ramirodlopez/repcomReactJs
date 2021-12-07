@@ -1,10 +1,14 @@
 import './index.css'
 import logoImg from '../../../src/assets/logitoasd.png'
+import React, { useContext } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget'
+import { CartContext } from '../../context/CartContext/CartContext';
 
 
 export const NavBar = () => {
+
+    const cartCont = useContext(CartContext);
 
     return (
         <header>
@@ -22,7 +26,7 @@ export const NavBar = () => {
                     <Link to="/category/CARTAS">CARTAS</Link>
                     <Link to="/category/GPS">GPS</Link>
                 </div>
-                <Link to="/CART"><CartWidget /></Link>
+                {cartCont.totalQty() > 0 && <Link to="/CART"><CartWidget /></Link>}
             </nav>
         </header>
     );

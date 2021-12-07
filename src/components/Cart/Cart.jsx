@@ -25,9 +25,11 @@ const Cart = () => {
                             </h2>
                         </div>
                     ))}
+                    <p></p>
+                    {cartCont.totalQty() > 0 && <h2 className="tittleCart"><center>Precio Total: ${cartCont.totalPrice()}</center></h2>}
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

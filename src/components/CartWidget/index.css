@@ -4,8 +4,17 @@
   }
 
 .carrito {
-    padding-top: 7px;
-    width: 50px;
+    padding-top: 0px;
+    width: 70px;
   }
   
-  
+  .contenedorCarrito{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.texto-encimaCarrito{
+    position: absolute;
+    top: 23px;
+    left: 13px;
+}

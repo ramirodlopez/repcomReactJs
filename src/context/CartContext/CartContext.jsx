@@ -44,6 +44,22 @@ const CartContextProvider = ({ children }) => {
         return cartList.reduce((accumulator, item) => accumulator + item.itemQty, 0)
     }
 
+    const totalPrice = () => {
+        let total = 0;
+        cartList.map((item) => {
+            total += item.itemPrice * item.itemQty;
+        });
+        return total;
+    }
+
+    const totalItems = () => {
+        let globalQty = 0;
+        cartList.map((item) => {
+            globalQty += item.itemQty;
+        });
+        return globalQty;
+    }
+
 
     return (
         <CartContext.Provider value={{
@@ -52,6 +68,8 @@ const CartContextProvider = ({ children }) => {
             clear,
             isInCart,
             totalQty,
+            totalPrice,
+            totalItems,
             cartList,
         }}>
             {children}
