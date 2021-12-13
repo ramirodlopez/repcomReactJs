@@ -4,6 +4,7 @@ import { products } from '../Items/Items';
 import { useParams } from 'react-router-dom';
 import './index.css'
 import { CartContext } from '../../context/CartContext/CartContext';
+import { getProducts } from '../../firebase/firebase';
 
 export const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
@@ -16,13 +17,8 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        const getProduct = new Promise((res) => {
-            setTimeout(() => {
-                res(products);
-            }, 1000);
-        });
 
-        getProduct
+        getProducts()
             .then((result) => {
                 itemId && setProduct(result.find((item) => item.id === itemId));
             })

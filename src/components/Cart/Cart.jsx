@@ -10,7 +10,7 @@ const Cart = () => {
         <div>
             <div className="fonditoCart">
                 <h1 className="tittleCart"><center>Carrito De Compras</center></h1>
-                {cartCont.totalQty() > 0 ? <button type="button" class="btn btn-dark" onClick={() => cartCont.clear()}>Vaciar Carrito</button> : <Link to="/">
+                {cartCont.totalQty() > 0 ? <button type="button" class="btn btn-dark" onClick={() => cartCont.clear()}>Vaciar Carrito</button> : <Link to="/category/PRODUCTS">
                     <button id="btnB" type="button" className="btn btn-secondary">No hay productos en el carrito</button>
                 </Link>}
                 <div>

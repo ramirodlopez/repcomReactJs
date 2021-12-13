@@ -3,8 +3,9 @@ import { ItemList } from '../ItemList/ItemList';
 import { products } from '../Items/Items';
 import { useParams } from 'react-router-dom';
 import './index.css'
+import { getProducts } from '../../firebase/firebase';
 
-export const ItemListContainer = ({ greeting }) => {
+export const ItemListContainer = () => {
     const [items, setItems] = useState([]);
     const [loader, setLoader] = useState(true);
     const { catId } = useParams();
@@ -12,17 +13,15 @@ export const ItemListContainer = ({ greeting }) => {
     useEffect(() => {
         setLoader(true);
 
-        const getItems = new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(products);
-            }, 1000);
-        });
-
-        getItems
+        getProducts()
+            .then((result) =>
+                result.sort((product1, product2) => { return product1.id - product2.id })
+            )
             .then((res) => {
                 catId
                     ? setItems(res.filter((item) => item.category === catId))
                     : setItems(res);
+
             })
             .finally(() => {
                 setLoader(false);
@@ -38,10 +37,7 @@ export const ItemListContainer = ({ greeting }) => {
             <h1 className="textLoading">Loading...</h1>
         </div >
     ) : (
-        <>
-            <h3 style={{ textAlign: 'center' }}>{greeting}</h3>
-            <ItemList items={items} />
-        </>
+        <ItemList items={items} />
     );
 };
 
