@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext/CartContext";
 import "./index.css";
 import { Link } from "react-router-dom";
-import { createOrder } from "../../firebase/firebase";
+import { actualizarStock, createOrder } from "../../firebase/firebase";
 import { async } from "@firebase/util";
 
 const Cart = () => {
@@ -13,7 +13,7 @@ const Cart = () => {
     const totalOrder = cartCont.totalPrice();
     const idOrder = await createOrder(itemsOrder, totalOrder);
     setId(idOrder);
-    //Agregar function actualizar stock de los productos
+    actualizarStock(itemsOrder);
     cartCont.clear();
   };
 

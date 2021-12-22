@@ -18,11 +18,10 @@ const CartContextProvider = ({ children }) => {
           itemQty: qty,
         },
       ]);
-    } else {
+    } else if (same.itemQty + qty <= item.stock) {
       same.itemQty += qty;
       setCart([...cartList]);
     }
-    console.log(cartList);
   };
 
   const clear = () => {
