@@ -21,10 +21,10 @@ export const getProducts = () => {
   return products;
 };
 
-export const createOrder = async (items, total) => {
+export const createOrder = async (buyer, items, total) => {
   const db = getFirestore();
   const docData = {
-    buyer: { name: "pepe", phone: 12321, email: "rami@ghola.com" },
+    buyer,
     items,
     date: Timestamp.fromDate(new Date()),
     total,

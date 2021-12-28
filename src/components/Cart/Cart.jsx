@@ -8,13 +8,33 @@ import { async } from "@firebase/util";
 const Cart = () => {
   const cartCont = useContext(CartContext);
   const [id, setId] = useState(null);
+  const [buyerData, setBuyerData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    age: "",
+  });
+  const [reenteredEmail, setReenteredEmail] = useState("");
+
+  const setAttribute = (event) => {
+    const value = event.target.value;
+    const fieldName = event.target.name;
+
+    setBuyerData({ ...buyerData, [fieldName]: value });
+  };
+
   const finishOrder = async () => {
-    const itemsOrder = cartCont.cartList;
-    const totalOrder = cartCont.totalPrice();
-    const idOrder = await createOrder(itemsOrder, totalOrder);
-    setId(idOrder);
-    actualizarStock(itemsOrder);
-    cartCont.clear();
+    if (buyerData.email == reenteredEmail) {
+      const itemsOrder = cartCont.cartList;
+      const totalOrder = cartCont.totalPrice();
+      const idOrder = await createOrder(buyerData, itemsOrder, totalOrder);
+      setId(idOrder);
+      actualizarStock(itemsOrder);
+      cartCont.clear();
+    } else {
+      alert("Los mails son distintos");
+    }
   };
 
   return (
@@ -24,7 +44,45 @@ const Cart = () => {
           <center>Carrito De Compras</center>
         </h1>
         {cartCont.totalQty() > 0 ? (
-          <div>
+          <div className="cardForm">
+            <input
+              name="firstName"
+              className="cardForm"
+              placeholder="Nombre"
+              onChange={(e) => setAttribute(e)}
+            />
+            <input
+              name="lastName"
+              className="cardForm"
+              placeholder="Apellido"
+              onChange={(e) => setAttribute(e)}
+            />
+            <input
+              name="phone"
+              className="cardForm"
+              placeholder="Telefono"
+              onChange={(e) => setAttribute(e)}
+            />
+
+            <input
+              name="age"
+              placeholder="Edad"
+              className="cardForm"
+              onChange={(e) => setAttribute(e)}
+            />
+
+            <input
+              name="email"
+              className="cardForm"
+              placeholder="Email"
+              onChange={(e) => setAttribute(e)}
+            />
+            <input
+              placeholder="Confirme Email"
+              className="cardForm"
+              onChange={(event) => setReenteredEmail(event.target.value)}
+            />
+
             <button
               type="button"
               class="btn btn-dark"
